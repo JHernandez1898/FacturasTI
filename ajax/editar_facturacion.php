@@ -80,7 +80,7 @@ $simbolo_moneda=get_row('perfil','moneda', 'id_perfil', 1);
 	<td></td>
 </tr>
 <tr>
-	<td class='text-right' colspan=4>IVA (<?php echo $impuesto;?>)% <?php echo $simbolo_moneda;?></td>
+	<td class='text-right' colspan=4>TAX (<?php echo $impuesto;?>)% <?php echo $simbolo_moneda;?></td>
 	<td class='text-right'><?php echo number_format($total_iva,2);?></td>
 	<td></td>
 </tr>
