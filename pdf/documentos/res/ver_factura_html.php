@@ -56,7 +56,7 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
 	
     <table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
         <tr>
-           <td style="width:50%;" class='midnight-blue'>FACTURAR A</td>
+           <td style="width:50%;" class='midnight-blue'>INVOICE TO:</td>
         </tr>
 		<tr>
            <td style="width:50%;" >
@@ -81,9 +81,9 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
        <br>
 		<table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
         <tr>
-           <td style="width:35%;" class='midnight-blue'>VENDEDOR</td>
-		  <td style="width:25%;" class='midnight-blue'>FECHA</td>
-		   <td style="width:40%;" class='midnight-blue'>FORMA DE PAGO</td>
+           <td style="width:35%;" class='midnight-blue'>SELLER</td>
+		  <td style="width:25%;" class='midnight-blue'>DATE</td>
+		   <td style="width:40%;" class='midnight-blue'>PAYMENT METHOD</td>
         </tr>
 		<tr>
            <td style="width:35%;">
@@ -96,10 +96,10 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
 		  <td style="width:25%;"><?php echo date("d/m/Y", strtotime($fecha_factura));?></td>
 		   <td style="width:40%;" >
 				<?php 
-				if ($condiciones==1){echo "Efectivo";}
-				elseif ($condiciones==2){echo "Cheque";}
-				elseif ($condiciones==3){echo "Transferencia bancaria";}
-				elseif ($condiciones==4){echo "Crédito";}
+				if ($condiciones==1){echo "CASH";}
+				elseif ($condiciones==2){echo "CHECK";}
+				elseif ($condiciones==3){echo "BANK TRANSACTION";}
+				elseif ($condiciones==4){echo "CREDIT";}
 				?>
 		   </td>
         </tr>
@@ -111,10 +111,10 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
   
     <table cellspacing="0" style="width: 100%; text-align: left; font-size: 10pt;">
         <tr>
-            <th style="width: 10%;text-align:center" class='midnight-blue'>CANT.</th>
-            <th style="width: 60%" class='midnight-blue'>DESCRIPCION</th>
-            <th style="width: 15%;text-align: right" class='midnight-blue'>PRECIO UNIT.</th>
-            <th style="width: 15%;text-align: right" class='midnight-blue'>PRECIO TOTAL</th>
+            <th style="width: 10%;text-align:center" class='midnight-blue'>QTY.</th>
+            <th style="width: 60%" class='midnight-blue'>DESCRIPTION</th>
+            <th style="width: 15%;text-align: right" class='midnight-blue'>UNIT. PRICE</th>
+            <th style="width: 15%;text-align: right" class='midnight-blue'>TOTAL PRICE</th>
             
         </tr>
 
@@ -169,7 +169,7 @@ while ($row=mysqli_fetch_array($sql))
             <td style="widtd: 15%; text-align: right;"> <?php echo number_format($subtotal,2);?></td>
         </tr>
 		<tr>
-            <td colspan="3" style="widtd: 85%; text-align: right;">IVA (<?php echo $impuesto;?>)% <?php echo $simbolo_moneda;?> </td>
+            <td colspan="3" style="widtd: 85%; text-align: right;">TAX (<?php echo $impuesto;?>)% <?php echo $simbolo_moneda;?> </td>
             <td style="widtd: 15%; text-align: right;"> <?php echo number_format($total_iva,2);?></td>
         </tr><tr>
             <td colspan="3" style="widtd: 85%; text-align: right;">TOTAL <?php echo $simbolo_moneda;?> </td>
@@ -180,7 +180,7 @@ while ($row=mysqli_fetch_array($sql))
 	
 	
 	<br>
-	<div style="font-size:11pt;text-align:center;font-weight:bold">Gracias por su compra!</div>
+	<div style="font-size:11pt;text-align:center;font-weight:bold">Thank you for your purchase!</div>
 	
 	
 	  
