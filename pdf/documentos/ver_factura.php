@@ -1,15 +1,12 @@
 <?php
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
+
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
         header("location: ../../login.php");
 		exit;
     }
 	/* Connect To Database*/
+	
 	include("../../config/db.php");
 	include("../../config/conexion.php");
 	//Archivo de funciones PHP

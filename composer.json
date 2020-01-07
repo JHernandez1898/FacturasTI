@@ -1,5 +1,8 @@
 {
   "name": "almasaeed2010/adminlte",
+  "require": {
+    "arielcr/numero-a-letras": "dev-master"
+  },
   "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 4",
   "homepage": "http://adminlte.io/",
   "keywords": [
@@ -22,4 +25,6 @@
   "support": {
     "issues": "https://github.com/ColorlibHQ/AdminLTE/issues"
   }
+  
 }
+

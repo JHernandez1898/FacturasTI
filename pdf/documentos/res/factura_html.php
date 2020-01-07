@@ -119,6 +119,7 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
         </tr>
 
 <?php
+include("numeros/src/NumeroALetras.php");
 $nums=1;
 $sumador_total=0;
 $sql=mysqli_query($con, "select * from products, tmp where products.id_producto=tmp.id_producto and tmp.session_id='".$session_id."'");
@@ -164,8 +165,9 @@ while ($row=mysqli_fetch_array($sql))
 	$total_iva=($subtotal * $impuesto )/100;
 	$total_iva=number_format($total_iva,2,'.','');
 	$total_factura=$subtotal+$total_iva;
-?>
-	  
+	$letras = new NumeroALetras();
+	$totalaletra= $letras->convertir(number_format($total_factura,2),'DOLLARS','CENTS');?>
+
         <tr>
             <td colspan="3" style="widtd: 85%; text-align: right;">SUBTOTAL <?php echo $simbolo_moneda;?> </td>
             <td style="widtd: 15%; text-align: right;"> <?php echo number_format($subtotal,2);?></td>
@@ -179,10 +181,17 @@ while ($row=mysqli_fetch_array($sql))
         </tr>
     </table>
 	
-	
+	<table cellspacing="0" style="width: 100%; text-align: left; font-size: 10pt;">
+		<tr>
+			<td style="width: 30%; class='midnight-blue'>TOTAL IN LETTER </td>
+			<td style="width: 70%; text-align: left" > <?php  echo $totalaletra;?></td>
+		</tr>
+	</table>
 	
 	<br>
 	<div style="font-size:11pt;text-align:center;font-weight:bold">Thank you for your purchase!</div>
+
+	
 	
 	
 	  
