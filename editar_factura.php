@@ -10,7 +10,7 @@
 	if (isset($_GET['id_factura']))
 	{
 		$id_factura=intval($_GET['id_factura']);
-		$campos="clientes.id_cliente, clientes.nombre_cliente, clientes.telefono_cliente, clientes.email_cliente, facturas.id_vendedor, facturas.fecha_factura, facturas.condiciones, facturas.estado_factura, facturas.numero_factura";
+		$campos="clientes.id_cliente, clientes.nombre_cliente, clientes.telefono_cliente, clientes.email_cliente, facturas.id_vendedor, facturas.observaciones,facturas.fecha_factura, facturas.condiciones, facturas.estado_factura, facturas.numero_factura";
 		$sql_factura=mysqli_query($con,"select $campos from facturas, clientes where facturas.id_cliente=clientes.id_cliente and id_factura='".$id_factura."'");
 		$count=mysqli_num_rows($sql_factura);
 		if ($count==1)
@@ -25,6 +25,7 @@
 				$condiciones=$rw_factura['condiciones'];
 				$estado_factura=$rw_factura['estado_factura'];
 				$numero_factura=$rw_factura['numero_factura'];
+				$observaciones = $rw_factura['observaciones'];
 				$_SESSION['id_factura']=$id_factura;
 				$_SESSION['numero_factura']=$numero_factura;
 		}	
@@ -241,6 +242,13 @@
 								</select>
 							</div>
 						</div>
+						<div class = "form-group row">
+              <label for="observacion" style="margin-right:50px;" class="col-md-1 control-label">Observaciones: </label></br>
+              <div class="col-md-9">
+                  <textarea name="observaciones" id="observaciones" class="form-control input-sm" rows="5" ><?php echo $observaciones ?></textarea>
+              </div>
+                  
+            </div>
 				
 				
 				<div class="col-md-12">

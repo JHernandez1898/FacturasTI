@@ -44,7 +44,7 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
                     P&aacute;gina [[page_cu]]/[[page_nb]]
                 </td>
                 <td style="width: 50%; text-align: right">
-                    &copy; <?php echo "obedalvarado.pw "; echo  $anio=date('Y'); ?>
+                    &copy; <?php echo  $anio=date('Y'); ?>
                 </td>
             </tr>
         </table>
@@ -165,6 +165,7 @@ while ($row=mysqli_fetch_array($sql))
 	$total_iva=($subtotal * $impuesto )/100;
 	$total_iva=number_format($total_iva,2,'.','');
 	$total_factura=$subtotal+$total_iva;
+	
 	$letras = new NumeroALetras();
 	$totalaletra= $letras->convertir(number_format($total_factura,2),'DOLLARS','CENTS');?>
 
@@ -187,6 +188,18 @@ while ($row=mysqli_fetch_array($sql))
 			<td style="width: 70%; text-align: left" > <?php  echo $totalaletra;?></td>
 		</tr>
 	</table>
+	<br>
+	<br>
+	<br>
+
+	<table cellspacing="0" style="width: 100%; text-align: left; font-size: 10pt;">
+		<tr>
+			<th style="width: 100%; class='midnight-blue'>NOTES </th>
+		</tr>
+		<tr>
+			<td style="width: 100%; text-align: left" > <?php echo $observaciones;?></td>
+		</tr>
+	</table>
 	
 	<br>
 	<div style="font-size:11pt;text-align:center;font-weight:bold">Thank you for your purchase!</div>
@@ -201,7 +214,7 @@ while ($row=mysqli_fetch_array($sql))
 <?php
 $date=date("Y-m-d H:i:s");
 //$insert=mysqli_query($con,"INSERT INTO facturas VALUES (NULL,'$numero_factura','$date','$id_cliente','$id_vendedor','$condiciones','$total_factura','1')");
-$insert=mysqli_query($con,"INSERT INTO `facturas` (`id_factura`, `numero_factura`, `fecha_factura`, `id_cliente`, `id_vendedor`, `condiciones`, `total_venta`, `estado_factura`)
- VALUES (NULL, '$numero_factura', '$date', '$id_cliente', '$id_vendedor', '$condiciones', '$total_factura', '1');");
+$insert=mysqli_query($con,"INSERT INTO `facturas` (`id_factura`, `numero_factura`, `fecha_factura`, `id_cliente`, `id_vendedor`, `condiciones`, `total_venta`,`observaciones`, `estado_factura`)
+ VALUES (NULL, '$numero_factura', '$date', '$id_cliente', '$id_vendedor', '$condiciones', '$total_factura','$observaciones', '1');");
 $delete=mysqli_query($con,"DELETE FROM tmp WHERE session_id='".$session_id."'");
 ?>

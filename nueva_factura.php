@@ -204,8 +204,15 @@
 									<option value="4">Crédito</option>
 								</select>
 							</div>
+              
 						</div>
-				
+            <div class = "form-group row">
+              <label for="observacion" style="margin-right:50px;" class="col-md-1 control-label">Observaciones: </label></br>
+              <div class="col-md-9">
+                  <textarea name="observaciones" id="observaciones" class="form-control input-sm" rows="3" ></textarea>
+              </div>
+                  
+            </div>
 				
 				<div class="col-md-12">
 					<div class="pull-right">

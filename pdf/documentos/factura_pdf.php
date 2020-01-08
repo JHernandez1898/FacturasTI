@@ -26,6 +26,7 @@
 	//Variables por GET
 	$id_cliente=intval($_GET['id_cliente']);
 	$id_vendedor=intval($_GET['id_vendedor']);
+	$observaciones = $_GET['observaciones'];
 	$condiciones=mysqli_real_escape_string($con,(strip_tags($_REQUEST['condiciones'], ENT_QUOTES)));
 
 	//Fin de variables por GET

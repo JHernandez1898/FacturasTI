@@ -190,7 +190,18 @@ while ($row=mysqli_fetch_array($sql))
 		</tr>
 	</table>
 	
-	
+	<br>
+	<br>
+	<br>
+
+	<table cellspacing="0" style="width: 100%; text-align: left; font-size: 10pt;">
+		<tr>
+			<th style="width: 100%; class='midnight-blue'>NOTES</th>
+		</tr>
+		<tr>
+			<td style="width: 100%; text-align: left" > <?php echo $observaciones;?></td>
+		</tr>
+	</table>
 	
 	<br>
 	<div style="font-size:11pt;text-align:center;font-weight:bold">Thank you for your purchase!</div>
