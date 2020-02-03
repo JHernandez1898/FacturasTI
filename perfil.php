@@ -45,7 +45,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Logo -->
     <a href="index.php" class="brand-link">
-      <span class="brand-text font-weight-light">Facturacion TI</span>
+      <span class="brand-text font-weight-light">Facturacion USA - TI  Ver 1.1</span>
     </a>
 
     <!-- Sidebar -->
@@ -56,7 +56,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">John Doe</a>
+          <a href="#" class="d-block">TLC Forwarding, Inc.</a>
         </div>
       </div>
 

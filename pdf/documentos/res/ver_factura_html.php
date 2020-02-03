@@ -204,7 +204,7 @@ while ($row=mysqli_fetch_array($sql))
 	</table>
 	
 	<br>
-	<div style="font-size:11pt;text-align:center;font-weight:bold">Thank you for your purchase!</div>
+	<div style="font-size:11pt;text-align:center;font-weight:bold">Thank you for your Business!</div>
 	
 	
 	  
